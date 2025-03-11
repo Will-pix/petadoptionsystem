@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS donations (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    purpose VARCHAR(50) NOT NULL,
+    message TEXT,
+    status VARCHAR(20) NOT NULL DEFAULT 'PENDING',
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+); 
